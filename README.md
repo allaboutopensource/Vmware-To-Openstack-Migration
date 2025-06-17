@@ -44,10 +44,13 @@ To enable CBT on vmware vm:
 •	Click Configuration Parameters->Add parameters
 
 ctkEnabled true
+
 scsi0:0.ctkEnabled true
 
 source openrc.sh
+
 wget https://dp-downloads.broadcom.com/VMware-vix-disklib-8.0.0-20521017.x86_64.tar.gz
+
 gunzip VMware-vix-disklib-8.0.0-20521017.x86_64.tar.gz
 
 Run MigrationKit via Docker
