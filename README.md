@@ -18,8 +18,6 @@ Linux system or VM with:
 
 Python 3.6+
 
-libvirt and QEMU tools installed
-
 Docker (for using prebuilt containers)
 
 Migratekit is a CLI tool which can help you to migrate your virtual machines from VMware to OpenStack in a near-zero downtime. It runs as an container on docker, to pull a docker image 
@@ -47,7 +45,9 @@ ctkEnabled true
 
 scsi0:0.ctkEnabled true
 
-source openrc.sh
+source openrc.sh (Ensure that rc file contains : export OS_USER_DOMAIN_NAME="cloud", export OS_PROJECT_DOMAIN_NAME="cloud", export DomainName="Cloud")
+
+Note: Either domainname or domainID should be defined not both
 
 wget https://dp-downloads.broadcom.com/VMware-vix-disklib-8.0.0-20521017.x86_64.tar.gz
 
