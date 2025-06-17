@@ -47,7 +47,6 @@ scsi0:0.ctkEnabled true
 source openrc.sh
 wget https://dp-downloads.broadcom.com/VMware-vix-disklib-8.0.0-20521017.x86_64.tar.gz
 gunzip VMware-vix-disklib-8.0.0-20521017.x86_64.tar.gz
-extract to the location : /usr/lib64/vmware-vix-disklib/lib64/
 
 Run MigrationKit via Docker
 
