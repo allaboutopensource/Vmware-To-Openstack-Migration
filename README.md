@@ -1,8 +1,10 @@
 # Vmware-To-Openstack-Migration
 
-VMware to OpenStack Migration Using VEXXHOST MigrationKit
+VMware to OpenStack Migration Using VEXXHOST MigrationKit.
 
 This technical guide walks through the process of exporting a virtual machine from VMware vSphere/ESXi and importing it into OpenStack using VEXXHOST's OpenStack MigrationKit.
+
+https://github.com/vexxhost/migratekit
 
 Prerequisites
 
