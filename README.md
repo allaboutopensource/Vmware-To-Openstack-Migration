@@ -45,7 +45,7 @@ ctkEnabled true
 
 scsi0:0.ctkEnabled true
 
-source openrc.sh (Ensure that rc file contains : export OS_USER_DOMAIN_NAME="cloud", export OS_PROJECT_DOMAIN_NAME="cloud", export DomainName="Cloud")
+source openrc.sh (Ensure that rc file contains : export OS_DOMAIN_NAME=Cloud)
 
 Note: Either domainname or domainID should be defined not both
 
