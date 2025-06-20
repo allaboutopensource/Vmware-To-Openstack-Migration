@@ -22,6 +22,8 @@ Docker (for using prebuilt containers)
 
 Migratekit is a CLI tool which can help you to migrate your virtual machines from VMware to OpenStack in a near-zero downtime. It runs as an container on docker, to pull a docker image 
 
+nbdkit with the VDDK plugin is used to access VMware VMDK disk images directly from ESXi or vCenter servers. 
+
 docker pull ghcr.io/vexxhost/migratekit:main
 
 Change block tracking (CBT) on the Vmware disks needs to be the enabled. For every disks it should be enabled.
@@ -53,6 +55,8 @@ wget https://dp-downloads.broadcom.com/VMware-vix-disklib-8.0.0-20521017.x86_64.
 
 gunzip VMware-vix-disklib-8.0.0-20521017.x86_64.tar.gz
 
-Run MigrationKit via Docker
+Run MigrationKit via Docker. You will also need to make sure you have all of your OpenStack environment variables set in your environment before running the command so that Migratekit can connect to the OpenStack cloud.
 
 docker run -it --rm --privileged   --network host -v /dev/disk/by-id:/dev/disk/by-id  -v /dev:/dev   -v /usr/lib64/vmware-vix-disklib/:/usr/lib64/vmware-vix-disklib:ro   --env-file <(env | grep OS_)   ghcr.io/vexxhost/migratekit:main   migrate    --vmware-endpoint <ip address> --vmware-username root --vmware-password 'secret2123'   --vmware-path /ha-datacenter/vm/migration-vm --debug
+
+The vm snapshot will be created on the vmware side and then it will do a full copy of the vmdk to the volume in openstack. The migrated volume(qcow2) gets attached to the conversion vm on openstack and detached later. Finally the snapshot will be removed from the vmware side. 
