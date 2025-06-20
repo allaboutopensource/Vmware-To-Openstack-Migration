@@ -6,6 +6,8 @@ This technical guide walks through the process of exporting a virtual machine fr
 
 https://github.com/vexxhost/migratekit
 
+![image](https://github.com/user-attachments/assets/0936f265-7d47-4fd7-8da3-55ca04ebe9f7)
+
 Prerequisites
 
 A running VMware vSphere or ESXi environment
