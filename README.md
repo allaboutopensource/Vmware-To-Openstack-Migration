@@ -74,5 +74,7 @@ Attaching volume to the conversion(migratekit) vm as /dev/vdd on openstack cloud
 
 full copy the disk.vmdk to this volume using /usr/bin/nbdcopy command  destination=/dev/vdd
 
+Detach volume from the conversion(migratekit) vm. 
+
 Removing snapshot
 
