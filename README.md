@@ -65,9 +65,14 @@ docker run -it --rm --privileged   --network host -v /dev/disk/by-id:/dev/disk/b
 What happens in the background :
 
 Creating new volume on openstack.
+
 Volume created, setting to bootable volume.
+
 Setting volume to be UEFI
+
 Attaching volume to the conversion(migratekit) vm as /dev/vdd on openstack cloud 
+
 full copy the disk.vmdk to this volume using /usr/bin/nbdcopy command  destination=/dev/vdd
+
 Removing snapshot
 
