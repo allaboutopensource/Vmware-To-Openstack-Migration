@@ -62,4 +62,12 @@ Run MigrationKit via Docker. You will also need to make sure you have all of you
 
 docker run -it --rm --privileged   --network host -v /dev/disk/by-id:/dev/disk/by-id  -v /dev:/dev   -v /usr/lib64/vmware-vix-disklib/:/usr/lib64/vmware-vix-disklib:ro   --env-file <(env | grep OS_)   ghcr.io/vexxhost/migratekit:main   migrate    --vmware-endpoint <ip address> --vmware-username root --vmware-password 'secret2123'   --vmware-path /ha-datacenter/vm/migration-vm --debug
 
-The vm snapshot will be created on the vmware side and then it will do a full copy of the vmdk to the volume in openstack. The migrated volume(qcow2) gets attached to the conversion vm on openstack and detached later. Finally the snapshot will be removed from the vmware side. 
+What happens in the background :
+
+Creating new volume on openstack.
+Volume created, setting to bootable volume.
+Setting volume to be UEFI
+Attaching volume to the conversion(migratekit) vm as /dev/vdd on openstack cloud 
+full copy the disk.vmdk to this volume using /usr/bin/nbdcopy command  destination=/dev/vdd
+Removing snapshot
+
