@@ -64,19 +64,19 @@ docker run -it --rm --privileged   --network host -v /dev/disk/by-id:/dev/disk/b
 
 What happens in the background :
 
-Create snapshot of the vm in vsphere/esxi
+1) Create snapshot of the vm in vsphere/esxi
 
-Creating new volume on openstack.
+2) Creating new volume on openstack.
 
-Volume created, setting to bootable volume.
+3) Volume created, setting to bootable volume.
 
-Setting volume to be UEFI
+4) Setting volume to be UEFI
 
-Attaching volume to the conversion(migratekit) vm as /dev/vdd on openstack cloud 
+5) Attaching volume to the conversion(migratekit) vm as /dev/vdd on openstack cloud 
 
-full copy the disk.vmdk to this volume using /usr/bin/nbdcopy command  destination=/dev/vdd
+6) full copy the disk.vmdk to this volume using /usr/bin/nbdcopy command  destination=/dev/vdd
 
-Detach volume from the conversion(migratekit) vm. 
+7) Detach volume from the conversion(migratekit) vm. 
 
-Removing snapshot of the vm from the vmware 
+8) Removing snapshot of the vm from the vmware 
 
